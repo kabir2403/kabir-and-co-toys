@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Gentle scroll for nav links (Vanilla Native Smooth Scroll handled by CSS)
-    // Mobile Hamburger Menu simple visual toggle (does not open full menu in this MVP)
+    // Mobile Hamburger Menu visual toggle
     const hamburger = document.querySelector('.hamburger');
-    if(hamburger) {
+    const navLinks = document.querySelector('.nav-links');
+    if(hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            alert('Mobile menu is clicked! (Can be expanded further)');
+            navLinks.classList.toggle('active');
         });
     }
 
