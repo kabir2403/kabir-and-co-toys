@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = button.getAttribute('data-price');
             // Change the phone number to your shop's WhatsApp number
             const phoneNumber = '919876543210'; 
-            const message = `Hello Kabir & Co! I would like to order the ${product} (₹${price}). Please let me know how to proceed with the payment and delivery.`;
+            const message = `Hello Kabir Toy Studio! I would like to order the ${product} (₹${price}). Please let me know how to proceed with the payment and delivery.`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappUrl, '_blank');
