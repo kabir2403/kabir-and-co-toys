@@ -46,4 +46,33 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(whatsappUrl, '_blank');
         });
     });
+
+    // Floating Email Reveal on Scroll
+    const floatingEmail = document.querySelector('.floating-email');
+    if (floatingEmail) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                floatingEmail.classList.add('visible');
+            } else {
+                floatingEmail.classList.remove('visible');
+            }
+        });
+    }
+
+    // Customer Service Search
+    const searchBtn = document.querySelector('.btn-search');
+    const searchInput = document.querySelector('#serviceSearch');
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                alert(`Searching help topics for: "${query}"\n(This is a placeholder for a real search system)`);
+            }
+        });
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    }
 });

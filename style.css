@@ -463,6 +463,198 @@ footer {
     padding-top: 20px;
 }
 
+/* ====== FLOATING EMAIL ====== */
+.floating-email {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 0px #004b80;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 3px solid var(--clr-text);
+    text-decoration: none;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+.floating-email.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.floating-email:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 11px 0px #004b80;
+}
+
+.floating-email:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0px #004b80;
+}
+
+.email-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.floating-email:hover .email-text {
+    max-width: 200px;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+/* ====== CUSTOMER SERVICE PAGE ====== */
+.service-hero {
+    background: var(--clr-primary);
+    padding: 60px 5%;
+    text-align: center;
+    border-bottom: 4px solid var(--clr-text);
+}
+
+.service-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--clr-text);
+}
+
+.search-bar {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 4px solid var(--clr-text);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 6px 0px #d4ab00;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+}
+
+.btn-search {
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    border: none;
+    padding: 0 30px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    transition: background 0.2s ease;
+    border-left: 4px solid var(--clr-text);
+}
+
+.btn-search:hover {
+    background: #00538c;
+}
+
+.service-topics {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.service-topics h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    background: var(--clr-light);
+    border-radius: 4px;
+    padding: 40px 20px;
+    box-shadow: 0 6px 0px rgba(0,0,0,0.1);
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 11px 0px rgba(0,0,0,0.15);
+    border-color: var(--clr-secondary);
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-methods {
+    padding: 60px 5% 80px;
+    background: #e8f5fb; /* Light blue */
+    text-align: center;
+    border-top: 4px solid var(--clr-text);
+}
+
+.contact-methods h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.contact-options-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    background: var(--clr-light);
+    border: 4px solid var(--clr-text);
+    border-radius: 4px;
+    padding: 40px;
+    max-width: 350px;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: 6px 6px 0px var(--clr-accent);
+}
+
+.contact-box .contact-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.contact-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
     .nav-links {
@@ -495,5 +687,31 @@ footer {
     }
     .subscribe-form {
         flex-direction: column;
+    }
+    .floating-email .email-text {
+        max-width: 200px;
+        opacity: 1;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+    .floating-email {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+    }
+    .search-bar {
+        flex-direction: column;
+        border: none;
+        box-shadow: none;
+        gap: 10px;
+    }
+    .search-bar input, .btn-search {
+        border: 4px solid var(--clr-text);
+        border-radius: 4px;
+        padding: 15px;
+    }
+    .contact-options-wrapper {
+        flex-direction: column;
+        align-items: center;
     }
 }
